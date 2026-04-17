@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
 body {
-  background-color: #FEFAEF;
+  background-color: #fefaef;
 }
-
 
 @font-face {
   font-family: mono_bold;
