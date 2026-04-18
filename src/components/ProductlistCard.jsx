@@ -6,23 +6,26 @@ import Link from "next/link";
 
 const ProductlistCard = ({ id, title, img, price }) => {
   return (
-    <div className="relative bg-gray-100/80 shadow-xl rounded-2xl">
-      <Link href={`/products/${id}`}>
-        <div className="relative w-full h-48">
-          <Image
-            src={img}
-            alt={title}
-            fill
-            className="object-cover rounded-2xl"
-          />
-        </div>
-      </Link>
-
+    <div>
+      <div className="relative bg-[#EEECED] p-3 ">
+        <Link href={`/products/${id}`}>
+          <div className="bg-[#EEECED] p-9">
+            <div className="relative w-full aspect-[3/4]">
+              <Image
+                src={img}
+                alt={title}
+                fill
+                className="object-cover rounded-md"
+              />
+            </div>
+          </div>
+        </Link>
+      </div>
       {/* <FavoritElement id={id} breed={breed} /> */}
 
-      <div className="flex justify-between p-3 pt-4 pb-4">
-        <h2 className="text-black text-l font-bold">{title}</h2>
-        <h2 className="text-gray-400">{price}</h2>
+      <div className="flex justify-between p-2 pt-4 pb-4">
+        <h2 className="text-black text-xl font-extrabold">{title}</h2>
+        <h2 className="text-black text-xl">{price}</h2>
       </div>
     </div>
   );
