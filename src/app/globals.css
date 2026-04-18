@@ -2,28 +2,29 @@
 
 body {
   background-color: #fefaef;
+  font-family: "mono_light";
 }
 
 @font-face {
-  font-family: mono_bold;
-  src: url(/public/Iosevka_Charon_Mono/IosevkaCharonMono-Bold.ttf);
+  font-family: "mono_bold";
+  src: url("/Iosevka_Charon_Mono/IosevkaCharonMono-Bold.ttf");
 }
 
 @font-face {
-  font-family: mono_light;
-  src: url(/public/Iosevka_Charon_Mono/IosevkaCharonMono-Light.ttf);
+  font-family: "mono_light";
+  src: url("/Iosevka_Charon_Mono/IosevkaCharonMono-Light.ttf");
 }
 
 h1 {
-  font-family: mono_bold;
+  font-family: "mono_bold";
   font-size: 50px;
 }
 
-p {
-  font-family: mono_light;
-  font-size: 25px;
+h2 {
+  font-family: "mono_bold";
 }
 
-* {
-  margin: 5;
+p {
+  font-family: "mono_light";
+  font-size: 25px;
 }

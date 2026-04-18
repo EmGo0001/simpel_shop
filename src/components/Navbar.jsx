@@ -1,8 +1,15 @@
+import Link from "next/link";
+
 const Navbar = () => {
   return (
-    <div className="flex gap-16">
-      <h1>HOME</h1>
-      <h1>PRODUCTS</h1>
+    <div className="flex gap-10">
+      <Link href="/">
+        <h2 className="text-2xl font-extrabold">HOME</h2>
+      </Link>
+
+      <Link href="/products">
+        <h2 className="text-2xl font-extrabold">PRODUCTS</h2>
+      </Link>
     </div>
   );
 };
