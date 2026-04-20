@@ -24,6 +24,10 @@ p {
   font-size: 25px;
 }
 
+button {
+  font-family: mono_bold;
+}
+
 * {
   margin: 5;
 }
