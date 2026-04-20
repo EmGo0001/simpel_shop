@@ -33,7 +33,7 @@ const Search = async ({ searchParams }) => {
 
   return (
     <div className="mt-10">
-      <h1 className="text-xl font-extrabold uppercase m-10 text-center">
+      <h1 className="text-xl font-extrabold uppercase m-15 text-center">
         {title}
       </h1>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-7 mt-5 m-6 md:m-0">
@@ -44,6 +44,7 @@ const Search = async ({ searchParams }) => {
             title={product.title}
             img={product.thumbnail}
             price={product.price}
+            product={product}
           />
         ))}
       </div>
