@@ -40,7 +40,7 @@ const CategoriesAndSearch = () => {
         ))}
       </select>
 
-      {/* til search */}
+      {/* til search*/}
       <form>
         <input
           className="border-none outline-none bg-[#FEFAEF] placeholder-black font-extrabold text-2xl"

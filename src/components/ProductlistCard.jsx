@@ -1,10 +1,10 @@
 // Komponenten her er til hvert "produkt kort" - hvordan det skal se ud med billede, pris osv.
 
-// import FavoritElement from "../components/FavoritElement";
+import FavoritElement from "../components/FavoritElement";
 import Image from "next/image";
 import Link from "next/link";
 
-const ProductlistCard = ({ id, title, img, price }) => {
+const ProductlistCard = ({ id, title, img, price, product }) => {
   return (
     <div>
       <div className="relative bg-[#EEECED] p-3 ">
@@ -20,12 +20,12 @@ const ProductlistCard = ({ id, title, img, price }) => {
             </div>
           </div>
         </Link>
+        <FavoritElement id={id} product={product} />
       </div>
-      {/* <FavoritElement id={id} breed={breed} /> */}
 
       <div className="flex justify-between p-2 pt-4 pb-4">
         <h2 className="text-black text-xl font-extrabold">{title}</h2>
-        <h2 className="text-black text-xl">{price}</h2>
+        <h2 className="text-black text-xl">${price}</h2>
       </div>
     </div>
   );
