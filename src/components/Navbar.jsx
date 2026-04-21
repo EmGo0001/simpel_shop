@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { PiBasketLight } from "react-icons/pi";
 import { usePathname } from "next/navigation";
+import { useCart } from "@/app/context/CartContext";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const { cart } = useCart();
 
   return (
     <div className="flex items-center w-full justify-between">
@@ -23,7 +25,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <Link href="/checkout" className="flex items-center gap-2">
             <PiBasketLight size={24} />
-            <span className="font-bold">0</span>
+            <span className="font-bold">{cart.length}</span>
           </Link>
         </div>
       )}
