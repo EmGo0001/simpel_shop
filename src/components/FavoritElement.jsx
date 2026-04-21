@@ -7,7 +7,7 @@ const Favorit = ({ id, product }) => {
   const { favorites, setFavorite, removeFavorite } = useFavorites();
   if (favorites.some((favorites) => favorites.id === id)) {
     return (
-      <div className="cursor-pointer absolute top-3 right-3 bg-[#FBFAFA] rounded-full p-2">
+      <div className="cursor-pointer  bg-[#FBFAFA] rounded-full p-2">
         <GoHeartFill
           size={25}
           className=" text-black"
@@ -19,7 +19,7 @@ const Favorit = ({ id, product }) => {
     );
   } else {
     return (
-      <div className="cursor-pointer absolute top-3 right-3 bg-[#FBFAFA] rounded-full p-2">
+      <div className="cursor-pointer  bg-[#FBFAFA] rounded-full p-2">
         <IoMdHeartEmpty
           size={25}
           className="text-black  "

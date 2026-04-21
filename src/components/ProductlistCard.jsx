@@ -1,6 +1,7 @@
 // Komponenten her er til hvert "produkt kort" - hvordan det skal se ud med billede, pris osv.
 
 import FavoritElement from "../components/FavoritElement";
+import BasketElement from "../components/BasketElement";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,7 +21,11 @@ const ProductlistCard = ({ id, title, img, price, product }) => {
             </div>
           </div>
         </Link>
-        <FavoritElement id={id} product={product} />
+
+        <div className="absolute top-3 right-3 flex flex-col gap-3">
+          <FavoritElement id={id} product={product} />
+          <BasketElement id={id} product={product} />
+        </div>
       </div>
 
       <div className="flex justify-between p-2 pt-4 pb-4">
