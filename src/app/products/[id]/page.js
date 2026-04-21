@@ -18,7 +18,7 @@ export default async function ProductPage({ params }) {
         <img
           src={product.thumbnail}
           alt={product.title}
-          className="w-full max-w-md h-[500px] object-contain"
+          className="w-full max-w-md h-125 object-contain"
         />
       </div>
       <FavoritElement id={id} product={product} />
