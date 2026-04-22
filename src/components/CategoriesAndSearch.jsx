@@ -22,10 +22,10 @@ const CategoriesAndSearch = () => {
   }, []);
 
   return (
-    <div className="border-b border-black pb-1 flex justify-between items-center mt-25">
+    <div className="border-b border-black pb-1 flex justify-between items-center mt-25 ">
       {/* til categories*/}
       <select
-        className="text-black font-extrabold text-2xl"
+        className="text-black font-extrabold text-2xl cursor-pointer"
         // Når der vælges en kategori, ændres URL'en
         onChange={(e) => {
           router.push(`?category=${e.target.value}`);

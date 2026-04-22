@@ -1,35 +1,47 @@
 "use client";
-
 import Link from "next/link";
-import { PiBasketLight } from "react-icons/pi";
+import { PiBasketBold } from "react-icons/pi";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/app/context/CartContext";
+import { useState } from "react";
+import CartSidebar from "@/components/CartSidebar";
 
 const Navbar = () => {
   const pathname = usePathname();
   const { cart } = useCart();
 
-  return (
-    <div className="flex items-center w-full justify-between">
-      <div className="flex gap-10">
-        <Link href="/">
-          <h2 className="text-2xl font-extrabold">HOME</h2>
-        </Link>
+  // state til at åbne/lukke sidebar
+  const [open, setOpen] = useState(false);
 
-        <Link href="/products">
-          <h2 className="text-2xl font-extrabold">PRODUCTS</h2>
-        </Link>
+  return (
+    <>
+      <div className="sticky top-0 z-50 bg-[#fefaef]">
+        <div className="flex items-center w-full justify-between ">
+          <div className="flex gap-10">
+            <Link href="/">
+              <h2 className="text-3xl font-extrabold">HOME</h2>
+            </Link>
+
+            <Link href="/products">
+              <h2 className="text-3xl font-extrabold">PRODUCTS</h2>
+            </Link>
+          </div>
+
+          {/* CART ICON */}
+          {pathname !== "/" && (
+            <div className="flex items-center gap-2">
+              <Link href="/checkout" className="flex items-center gap-2">
+                <PiBasketBold size={30} />
+                <span className="font-extrabold">{cart.length}</span>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
 
-      {pathname !== "/" && (
-        <div className="flex items-center gap-2">
-          <Link href="/checkout" className="flex items-center gap-2">
-            <PiBasketLight size={24} />
-            <span className="font-bold">{cart.length}</span>
-          </Link>
-        </div>
-      )}
-    </div>
+      {/* SIDEBAR */}
+      <CartSidebar isOpen={open} onClose={() => setOpen(false)} />
+    </>
   );
 };
 
