@@ -94,7 +94,7 @@ export default function BasketSidebar() {
         </div>
         <div className="mt-5 flex justify-center pb-5">
           <Link href="/checkout">
-            <button className="bg-black text-white py-2 px-5 rounded-xl hover:opacity-80 transition cursor-pointer font-bold">
+            <button className="bg-black text-white py-2 px-5 rounded-xl hover:opacity-80 transition cursor-pointer font-bold mb-9">
               go to order
             </button>
           </Link>

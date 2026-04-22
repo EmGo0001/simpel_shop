@@ -15,7 +15,7 @@ export default function Checkout() {
   // Vi bruger Number(item.price || 0) for at undgå NaN hvis price mangler
   const realTotal = cart.reduce(
     (total, item) => total + Number(item.price || 0),
-    0,
+    0
   );
 
   // Smooth animation af total
@@ -64,17 +64,19 @@ export default function Checkout() {
 
       <div className="p-10 max-w-3xl mx-auto mt-5">
         {/* tilbage link */}
-        <div className="flex items-center gap-3 cursor-pointer mb-2">
+        <div className="flex items-center gap-3 cursor-pointer mb-5">
           <Link href="/products" className="flex items-center gap-3 w-fit">
             <LiaLongArrowAltLeftSolid className="text-xl" />
-            <p className="font-bold text-xl">I WANT MORE BITCH</p>
+            <p className="font-bold text-xl transition-transform duration-300 hover:scale-110 ">
+              WANT MORE?
+            </p>
           </Link>
         </div>
 
         {/* hvis kurven er tom */}
         {cart.length === 0 && (
-          <p className="text-center mt-5 text-gray-400">
-            shopping bag is empty
+          <p className="text-center m-9 text-gray-400">
+            shopping bag is empty :(
           </p>
         )}
 
@@ -132,7 +134,7 @@ export default function Checkout() {
         {/* BUTTON */}
         {cart.length > 0 && (
           <div className="flex justify-center text-lg">
-            <button className="mt-5 w-50 bg-black font-medium text-white py-2 rounded-xl cursor-pointer">
+            <button className="mt-5 w-50 bg-black font-medium text-white py-2 rounded-xl cursor-pointer transition-transform duration-300 hover:scale-110">
               pay now
             </button>
           </div>

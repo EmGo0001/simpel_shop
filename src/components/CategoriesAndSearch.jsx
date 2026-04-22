@@ -22,7 +22,7 @@ const CategoriesAndSearch = () => {
   }, []);
 
   return (
-    <div className="border-b border-black pb-1 flex justify-between items-center mt-25 ">
+    <div className="border-b border-black pb-1 flex justify-between items-center mt-18 ">
       {/* til categories*/}
       <select
         className="text-black font-extrabold text-2xl cursor-pointer"

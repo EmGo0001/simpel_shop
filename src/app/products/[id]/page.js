@@ -23,32 +23,31 @@ export default async function ProductPage({ params }) {
 
   return (
     <div className="mt-10 max-w-5xl mx-auto px-4">
-      <div className="flex items-center gap-3 cursor-pointer mb-2">
+      <div className="flex gap-3 cursor-pointer mb-9 -ml-26">
         <Link href="/products" className="flex items-center gap-3 w-fit">
           <LiaLongArrowAltLeftSolid className="text-xl" />
-          <p className="font-bold text-xl">back to products</p>
+          <p className="font-bold text-l">back to products</p>
         </Link>
       </div>
 
       <div className="grid grid-cols-2 gap-10 items-start">
-        <div className="flex justify-center bg-[#EEECED] p-9 ">
+        <div className="flex justify-center bg-[#EEECED] p-9 relative">
           <img
             src={product.thumbnail}
             alt={product.title}
             className="max-w-xs h-100 object-cover w-full"
           />
+
+          <div className="absolute top-5 right-5 bg-white w-10 h-10 rounded-full flex items-center justify-center ">
+            <FavoritElement id={id} product={product} />
+          </div>
         </div>
 
         <div>
           <div className="flex justify-between items-start">
-            <h2 className="text-3xl font-bold max-w-xs">{product.title}</h2>
-            <FavoritElement
-              id={id}
-              product={product}
-              className="absolute top-3 right-3"
-            />
+            <h2 className="text-5xl font-bold ">{product.title}</h2>
           </div>
-          <h2 className="text-2xl font-semibold uppercase max-w-xs text-gray-600">
+          <h2 className="text-xl mt-2 font-semibold uppercase max-w-xs text-gray-600">
             {product.brand}
           </h2>
           <p className="text-lg mt-5 text-gray-600 line-clamp-3">

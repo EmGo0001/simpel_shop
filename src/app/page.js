@@ -42,7 +42,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex justify-end">
+      <div className="flex justify-end -mt-9">
         <Link href="/products" className="flex items-center gap-3 group">
           <span className="underline decoration-2 underline-offset-4 text-3xl transition-transform duration-300 group-hover:scale-110 ">
             VIEW PRODUCTS
