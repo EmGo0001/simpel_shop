@@ -13,8 +13,9 @@ export default function RootLayout({ children }) {
     <html lang="da">
       <body className="max-w-[1200px] mx-auto mt-10">
         <CartProvider>
-          <Navbar />
-
+          <Suspense fallback={<div className="h-20" />}>
+            <Navbar />
+          </Suspense>
           <Suspense
             fallback={
               <div className="flex justify-center p-10">Indlæser...</div>

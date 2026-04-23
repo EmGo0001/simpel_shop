@@ -1,4 +1,5 @@
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 import FavoritElement from "@/components/FavoritElement";
 import { LiaLongArrowAltLeftSolid } from "react-icons/lia";
 import AddToCartButton from "@/components/AddToCart";
