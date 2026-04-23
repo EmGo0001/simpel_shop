@@ -1,7 +1,7 @@
 import ProductlistCard from "./ProductlistCard";
 
 const Search = async ({ searchParams }) => {
-  const query = searchParams?.search || "";
+  const query = searchParams?.query || "";
   const category = searchParams?.category || "";
 
   let url = "https://dummyjson.com/products";
