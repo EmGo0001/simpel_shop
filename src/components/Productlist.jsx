@@ -1,7 +1,8 @@
 import ProductlistCard from "./ProductlistCard";
 
 const Search = async ({ searchParams }) => {
-  const { query, category } = await searchParams;
+  const query = searchParams?.search || "";
+  const category = searchParams?.category || "";
 
   let url = "https://dummyjson.com/products";
 
@@ -10,7 +11,6 @@ const Search = async ({ searchParams }) => {
   } else if (query) {
     url = `https://dummyjson.com/products/search?q=${query}`;
   }
-
   const res = await fetch(url, {
     cache: "no-store",
   });

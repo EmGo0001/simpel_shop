@@ -1,7 +1,7 @@
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home({ searchParams }) {
   return (
     <div className="font-bold">
       <div className="flex gap-6 items-start mt-15">

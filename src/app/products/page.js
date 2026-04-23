@@ -2,20 +2,22 @@ import { Suspense } from "react";
 import CategoriesAndSearch from "@/components/CategoriesAndSearch";
 import Productlist from "@/components/Productlist";
 
-export default function Home({ searchParams }) {
+export default async function Home({ searchParams }) {
+  const resolvedSearchParams = await searchParams;
+
   return (
-    <div>
+    <main>
       <CategoriesAndSearch />
 
       <Suspense
         fallback={
           <div className="flex items-center justify-center h-[60vh]">
-            Loading products...
+            <p className="text-gray-500 font-medium">Loading products...</p>
           </div>
         }
       >
-        <Productlist searchParams={searchParams} />
+        <Productlist searchParams={resolvedSearchParams} />
       </Suspense>
-    </div>
+    </main>
   );
 }
