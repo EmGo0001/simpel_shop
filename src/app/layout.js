@@ -24,12 +24,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="da">
       <body className="max-w-[1200px] mx-auto mt-10">
-        <Providers>
-          <Suspense fallback={<div className="h-20" />}>
-            <Navbar />
-          </Suspense>
-          <main>{children}</main>
-        </Providers>
+        <CartProvider>
+          <Suspense fallback={null}>{children}</Suspense>
+        </CartProvider>
       </body>
     </html>
   );
