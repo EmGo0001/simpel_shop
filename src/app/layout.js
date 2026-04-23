@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
           </Suspense>
           <Suspense
             fallback={
-              <div className="flex justify-center p-10">Indlæser...</div>
+              <div className="flex justify-center p-10">Loading...</div>
             }
           >
             {children}

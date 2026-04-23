@@ -12,7 +12,6 @@ export default function Checkout() {
   const [displayTotal, setDisplayTotal] = useState(0);
 
   // Beregner den "faktiske" totalpris ud fra kurven
-  // Vi bruger Number(item.price || 0) for at undgå NaN hvis price mangler
   const realTotal = cart.reduce(
     (total, item) => total + Number(item.price || 0),
     0

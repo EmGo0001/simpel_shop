@@ -53,6 +53,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// Skjuler cart-ikonet på forsiden ved at tjekke pathname med usePathname()
-// Hvis vi er på "/", bliver cart ikke renderet
