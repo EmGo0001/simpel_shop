@@ -21,18 +21,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body>
+    <html lang="da">
+      <body className="max-w-[1200px] mx-auto mt-10">
         <CartProvider>
-          <main className="max-w-[1200px] mx-auto mt-10">
-            <Suspense fallback={<div>Loading...</div>}>
-              <Navbar />
-            </Suspense>
-            {children}
-          </main>
+          <Suspense fallback={<div className="h-20" />}>
+            <Navbar />
+          </Suspense>
+
+          <main>{children}</main>
         </CartProvider>
       </body>
     </html>
