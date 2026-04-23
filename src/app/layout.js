@@ -1,19 +1,7 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-import { CartProvider } from "./context/CartContext";
 import { Suspense } from "react";
-import Providers from "./providers";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { CartProvider } from "./context/CartContext";
+import Navbar from "@/components/Navbar";
+import "./globals.css";
 
 export const metadata = {
   title: "Simpel Shop",
@@ -25,7 +13,15 @@ export default function RootLayout({ children }) {
     <html lang="da">
       <body className="max-w-[1200px] mx-auto mt-10">
         <CartProvider>
-          <Suspense fallback={null}>{children}</Suspense>
+          <Navbar />
+
+          <Suspense
+            fallback={
+              <div className="flex justify-center p-10">Indlæser...</div>
+            }
+          >
+            {children}
+          </Suspense>
         </CartProvider>
       </body>
     </html>
