@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { CartProvider } from "./context/CartContext";
 import { Suspense } from "react";
+import Providers from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,12 +24,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="da">
       <body className="max-w-[1200px] mx-auto mt-10">
-        <CartProvider>
+        <Providers>
           <Suspense fallback={<div className="h-20" />}>
             <Navbar />
           </Suspense>
-          <main> {children}</main>
-        </CartProvider>
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );
