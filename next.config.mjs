@@ -2,7 +2,12 @@
 const nextConfig = {
   cacheComponents: true,
   images: {
-    domains: ["cdn.dummyjson.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.dummyjson.com",
+      },
+    ],
   },
 };
 

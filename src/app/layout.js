@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { CartProvider } from "./context/CartContext";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,10 +27,10 @@ export default function RootLayout({ children }) {
     >
       <body>
         <CartProvider>
-          <main className="max-w-[1200px] mx-auto mt-10">
+          <Suspense fallback={<div>Loading...</div>}>
             <Navbar />
-            {children}
-          </main>
+          </Suspense>
+          <main className="max-w-[1200px] mx-auto mt-10">{children}</main>
         </CartProvider>
       </body>
     </html>
