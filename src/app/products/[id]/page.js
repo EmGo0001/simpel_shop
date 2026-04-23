@@ -2,7 +2,6 @@ import FavoritElement from "@/components/FavoritElement";
 import { LiaLongArrowAltLeftSolid } from "react-icons/lia";
 import AddToCartButton from "@/components/AddToCart";
 import Link from "next/link";
-export const dynamic = "force-dynamic";
 
 export default async function ProductPage({ params }) {
   const { id } = await params;

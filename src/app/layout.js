@@ -27,10 +27,12 @@ export default function RootLayout({ children }) {
     >
       <body>
         <CartProvider>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Navbar />
-          </Suspense>
-          <main className="max-w-[1200px] mx-auto mt-10">{children}</main>
+          <main className="max-w-[1200px] mx-auto mt-10">
+            <Suspense fallback={<div>Loading...</div>}>
+              <Navbar />
+            </Suspense>
+            {children}
+          </main>
         </CartProvider>
       </body>
     </html>
